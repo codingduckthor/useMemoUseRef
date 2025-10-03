@@ -1,16 +1,35 @@
-# React + Vite
+Часть 1. Теория (обязательно)
+•	1. В 3–4 предложениях объясни разницу между useState и useRef.
+•	2. Объясни, в каких случаях лучше использовать useMemo, а в каких — useCallback.
+•	3. Приведи пример из реальной жизни (не из кода), который можно сравнить с работой useMemo или useRef.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Часть 2. Практика (обязательно)
+Задание 1. Фильтрация с useMemo
+Сделай компонент ProductSearch, который:
+- Загружает товары с API https://dummyjson.com/products
+- Имеет поле поиска по названию
+- Использует useMemo, чтобы не пересчитывать фильтрацию при каждом рендере
 
-Currently, two official plugins are available:
+👉 Ожидаемый результат: товары фильтруются только при изменении строки поиска.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Задание 2. Счётчик ререндеров с useRef
+Сделай компонент RenderCounter, который:
+- Показывает, сколько раз компонент был отрисован
+- Для хранения счётчика использует useRef
 
-## React Compiler
+👉 Подсказка: обновлять ref.current можно без вызова рендера.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Задание 3. Калькулятор с useCallback
+Сделай компонент Calculator, который:
+- Имеет поле ввода числа и кнопку «Удвоить»
+- Для функции «удвоить» использует useCallback
+- Добавь console.log, чтобы показать, что функция не пересоздаётся при каждом рендере
 
-## Expanding the ESLint configuration
+Задание 4. Фокус на input с useRef
+Сделай компонент FocusInput, где при загрузке страницы курсор сразу оказывается в input (автофокус).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Задание 5. Таблица с подсчётом
+Создай компонент BigList, который генерирует массив из 1000 случайных чисел.
+- С помощью useMemo находи сумму чисел
+- Добавь кнопку «Сгенерировать заново»
+- Покажи, что сумма пересчитывается только при изменении массива
